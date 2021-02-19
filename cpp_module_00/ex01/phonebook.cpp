@@ -92,9 +92,18 @@ int main()
 		std::cout << "command > ";
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
-			contacts[ctcIndex < 8 ? ctcIndex++ : 7].setContact();
+		{
+			if (ctcIndex < 8)
+				contacts[ctcIndex++].setContact();
+			else
+                std::cout << "ADD: phonebook is full!" << std::endl;
+		}
 		else if (cmd == "SEARCH")
 		{
+            if (ctcIndex == 0)
+            {
+                std::cout << "SERACH: nothing to search" << std::endl;
+            }
 			std::cout << "+----------+----------+----------+----------+" << std::endl;
 			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 			std::cout << "+----------+----------+----------+----------+" << std::endl;
@@ -111,7 +120,7 @@ int main()
 					break ;
 				}
 			int index = flag ? atoi(cmd.c_str()) : ctcIndex - 1;
-			index = 0 <= index && index < ctcIndex ? index : ctcIndex - 1;
+			index = (0 <= index && index < ctcIndex) ? index : ctcIndex - 1;
 			contacts[index].putAllContact();
 		}
 		else if (cmd == "EXIT")
