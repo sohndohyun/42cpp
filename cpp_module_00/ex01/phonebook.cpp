@@ -103,6 +103,7 @@ int main()
             if (ctcIndex == 0)
             {
                 std::cout << "SERACH: nothing to search" << std::endl;
+				continue;
             }
 			std::cout << "+----------+----------+----------+----------+" << std::endl;
 			std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
@@ -119,9 +120,12 @@ int main()
 					flag = false;
 					break ;
 				}
-			int index = flag ? atoi(cmd.c_str()) : ctcIndex - 1;
-			index = (0 <= index && index < ctcIndex) ? index : ctcIndex - 1;
-			contacts[index].putAllContact();
+			int index = flag ? atoi(cmd.c_str()) : -1;
+			index = (0 <= index && index < ctcIndex) ? -1 : ctcIndex - 1;
+			if (index == -1)
+				std::cout << "SERACH: wrong index!" << std::endl;
+			else
+				contacts[index].putAllContact();
 		}
 		else if (cmd == "EXIT")
 		{
