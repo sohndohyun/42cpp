@@ -2,13 +2,13 @@
 #include <fstream>
 #include <cerrno>
 
-void readfile(std::ifstream& istream, std::string& input)
+void readFile(std::ifstream& is, std::string& input)
 {
 	std::string line;
-	while (std::getline(istream, line))
+	while (std::getline(is, line))
 	{
 		input.append(line);
-		if (!istream.eof())
+		if (!is.eof())
 			input.append("\n");
 	}
 }
@@ -21,15 +21,46 @@ int replace(std::string file, std::string s1, std::string s2)
 		return 1;
 	}
 
-	std::ifstream istream;
+	std::ifstream is;
 	std::string input;
+	std::string output;
 
-	istream.open(file);
-	if (errno) return errno;
+	is.open(file);
+	if (errno)
+	{
+		std::cerr << file << ": " << std::strerror(errno) << std::endl;
+		return errno;
+	}
+	readFile(is, input);
+	is.close();
 
-	readfile(istream, input);
-
-	
+	if (s1 == s2)
+		output = input;
+	else
+	{
+		size_t start = 0;
+		size_t index;
+		while (1)
+		{
+			if ((index = input.find(s1, start)) == std::string::npos)
+			{
+				output.append(input, start, input.length());
+				break;
+			}
+			output.append(input, start, index - start);
+			output.append(s2);
+			start = index + s1.length();
+		}
+	}
+	std::ofstream os;
+	os.open(file + ".replace");
+	if (errno)
+	{
+		std::cerr << file << ": " << std::strerror(errno) << std::endl;
+		return errno;
+	}
+	os << output;
+	os.close();
 
 	return 0;
 }
