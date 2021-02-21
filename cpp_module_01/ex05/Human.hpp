@@ -6,11 +6,9 @@
 class Human
 {
 private:
-	Brain* brain;
+	Brain brain;
 
 public:
-	Human();
-	~Human();
 	Brain& getBrain();
 	std::string identify();
 };
