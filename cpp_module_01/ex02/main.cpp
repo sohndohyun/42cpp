@@ -6,7 +6,7 @@ int main()
 	zombieEvent.setZombieType("NewType");
 	for (int i = 0;i < 10;i++)
 	{
-		Zombie *zombie;
+		Zombie* zombie;
 		zombie = zombieEvent.randomChump();
 		delete zombie;
 	}

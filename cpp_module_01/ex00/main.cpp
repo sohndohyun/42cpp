@@ -3,7 +3,7 @@
 
 void ponyOnTheHeap()
 {
-	Pony *pony = new Pony("pony_heap");
+	Pony* pony = new Pony("pony_heap");
 	pony->print_name();
 	std::cout << "Delete pony on the heap" << std::endl;
 	delete pony;

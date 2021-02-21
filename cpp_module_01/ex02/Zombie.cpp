@@ -1,9 +1,20 @@
 #include "Zombie.hpp"
 #include <iostream>
 
+Zombie::Zombie()
+{
+	this->type = "default_type";
+	this->name = "default_name";
+}
+
 Zombie::Zombie(std::string type, std::string name)
 {
 	this->type = type;
+	this->name = name;
+}
+
+void Zombie::setName(std::string name)
+{
 	this->name = name;
 }
 

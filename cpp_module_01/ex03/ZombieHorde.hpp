@@ -6,7 +6,7 @@
 class ZombieHorde
 {
 private:
-	Zombie *zombies;
+	Zombie* zombies;
 	int zombieNum;
 public:
 	ZombieHorde(int n);
