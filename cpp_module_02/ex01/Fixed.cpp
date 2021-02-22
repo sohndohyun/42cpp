@@ -41,11 +41,14 @@ Fixed::Fixed(const float value)
 	this->value = roundf(value * (1 << bits));
 }
 
-int Fixed::getRawBits(void) const
+Fixed& Fixed::operator=(const Fixed& fixed)
 {
-	std::cout << "getRawBits member function called" << std::endl;
-	return value;
+	std::cout << "Assignation operator called" << std::endl;
+	if (this != &fixed)
+		value = fixed.getRawBits();
+	return *this;
 }
+
 
 void Fixed::setRawBits(int const raw)
 {

@@ -25,7 +25,7 @@ Fixed& Fixed::operator=(const Fixed& fixed)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &fixed)
-		value = fixed.value;
+		value = fixed.getRawBits();
 	return *this;
 }
 

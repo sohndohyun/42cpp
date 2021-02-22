@@ -91,6 +91,8 @@ int main()
 	{
 		std::cout << "command > ";
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			break ;
 		if (cmd == "ADD")
 		{
 			if (ctcIndex < 8)
@@ -121,7 +123,7 @@ int main()
 					break ;
 				}
 			int index = flag ? atoi(cmd.c_str()) : -1;
-			index = (0 <= index && index < ctcIndex) ? ctcIndex - 1 : -1;
+			index = (0 <= index && index < ctcIndex) ? index : -1;
 			if (index == -1)
 				std::cout << "SEARCH: wrong index!" << std::endl;
 			else
