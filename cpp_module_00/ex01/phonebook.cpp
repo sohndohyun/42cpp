@@ -121,9 +121,9 @@ int main()
 					break ;
 				}
 			int index = flag ? atoi(cmd.c_str()) : -1;
-			index = (0 <= index && index < ctcIndex) ? -1 : ctcIndex - 1;
+			index = (0 <= index && index < ctcIndex) ? ctcIndex - 1 : -1;
 			if (index == -1)
-				std::cout << "SERACH: wrong index!" << std::endl;
+				std::cout << "SEARCH: wrong index!" << std::endl;
 			else
 				contacts[index].putAllContact();
 		}
