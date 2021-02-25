@@ -110,7 +110,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 	int random = rand() % 5;
 	if (energyPoints >= 25)
 	{
-		energyPoints -= energyPoints;
+		energyPoints -= 25;
 		std::cout << "FR4G-TP <" << name << "> attacks <" << target 
 		<< "> with " << attacks[random] << ", causing <"
 		<< damage[random] << "> points of damage!" << std::endl;
