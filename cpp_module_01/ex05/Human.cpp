@@ -1,12 +1,12 @@
 #include "Human.hpp"
 #include <sstream>
 
-Brain& Human::getBrain()
+const Brain& Human::getBrain() const
 {
 	return brain;
 }
 
-std::string Human::identify()
+std::string Human::identify() const
 {
-	return brain.identify();
+	return getBrain().identify();
 }
