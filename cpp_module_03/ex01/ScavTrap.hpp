@@ -18,9 +18,9 @@ private:
 public:
 	ScavTrap();
 	ScavTrap(std::string name);
-	ScavTrap(const ScavTrap &ScavTrap);
+	ScavTrap(const ScavTrap &scavTrap);
 	~ScavTrap();
-	ScavTrap& operator=(const ScavTrap &ScavTrap);
+	ScavTrap& operator=(const ScavTrap &scavTrap);
 
 	void rangedAttack(std::string const &target);
 	void meleeAttack(std::string const &target);
