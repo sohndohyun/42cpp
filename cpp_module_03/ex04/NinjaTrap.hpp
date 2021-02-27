@@ -4,7 +4,6 @@
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
-#include "SuperTrap.hpp"
 
 class NinjaTrap : public virtual ClapTrap
 {
@@ -19,7 +18,6 @@ public:
 	void ninjaShoebox(ScavTrap &scavTrap);
 	void ninjaShoebox(ClapTrap &clapTrap);
 	void ninjaShoebox(NinjaTrap &ninjaTrap);
-	void ninjaShoebox(SuperTrap &superTrap);
 };
 
 #endif

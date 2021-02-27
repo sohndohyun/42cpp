@@ -48,8 +48,3 @@ void NinjaTrap::ninjaShoebox(NinjaTrap &ninjaTrap)
 {
 	std::cout << "NINJ4-TP <" << getName() << "> Used Special Attack to " << "NINJ4-TP <" << ninjaTrap.getName() << ">" << std::endl;
 }
-
-void NinjaTrap::ninjaShoebox(SuperTrap &superTrap)
-{
-	std::cout << "NINJ4-TP <" << getName() << "> Used Special Attack to " << "SUP3R-TP <" << superTrap.getName() << ">" << std::endl;
-}
