@@ -19,7 +19,7 @@ void *serialize(void)
 	for (int i = 0;i < 8;i++)
 	{
 		ptr[i] = randomAlnum();
-		ptr[12 + i] += randomAlnum();
+		ptr[12 + i] = randomAlnum();
 	}
 	*reinterpret_cast<int*>(ptr + 8) = std::rand() % 100;
 	return static_cast<void*>(ptr);
