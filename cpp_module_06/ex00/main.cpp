@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 void printToChar(std::string value)
 {
@@ -31,9 +32,16 @@ void printToFloat(std::string value)
 	try {
 		float ret = stof(value);
 		if (ret - static_cast<int>(ret) == 0)
-			std::cout << ret << ".0f" << std::endl;
+		{
+			if (ret < 1000000)
+				std::cout << ret << ".0f" << std::endl;
+			else
+				std::cout << ret << "f" << std::endl;
+		}
 		else
+		{
 			std::cout << ret << "f" << std::endl;
+		}
 	} catch(std::out_of_range &e) {
 		std::cout << "inff" << std::endl;
 	} catch(std::invalid_argument &e) {
@@ -47,9 +55,16 @@ void printToDouble(std::string value)
 	try {
 		double ret = stod(value);
 		if (ret - static_cast<int>(ret) == 0)
-			std::cout << ret << ".0" << std::endl;
+		{
+			if (ret < 1000000)
+				std::cout << ret << ".0" << std::endl;
+			else
+				std::cout << ret << std::endl;
+		}
 		else
-			std::cout << ret  << std::endl;
+		{
+			std::cout << ret << std::endl;
+		}
 	} catch(std::out_of_range &e) {
 		std::cout << "inf" << std::endl;
 	} catch(std::invalid_argument &e) {
