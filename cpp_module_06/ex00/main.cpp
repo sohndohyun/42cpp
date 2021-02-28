@@ -43,9 +43,9 @@ void printToFloat(std::string value)
 
 void printToDouble(std::string value)
 {
-	std::cout << "float: ";
+	std::cout << "double: ";
 	try {
-		double ret = stof(value);
+		double ret = stod(value);
 		if (ret - static_cast<int>(ret) == 0)
 			std::cout << ret << ".0" << std::endl;
 		else
