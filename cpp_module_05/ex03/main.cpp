@@ -29,10 +29,10 @@ int main()
 {
     Intern someRandomIntern;
 
-    testIntern(someRandomIntern, "presidential pardon", "Michelon");
-    testIntern(someRandomIntern, "robotomy request", "Bender");
-    testIntern(someRandomIntern, "shrubbery creation", "Maison");
-    testIntern(someRandomIntern, "doesn't exist", "NOP");
+    testIntern(someRandomIntern, "presidential pardon", "target1");
+    testIntern(someRandomIntern, "robotomy request", "target2");
+    testIntern(someRandomIntern, "shrubbery creation", "target3");
+    testIntern(someRandomIntern, "doesn't exist", "target_error");
 
     return (0);
 }
