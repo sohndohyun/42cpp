@@ -63,11 +63,11 @@ unsigned int Span::shortestSpan()
 	return ret;
 }
 
-unsigned int Span::longestSpan()
+unsigned long long int Span::longestSpan()
 {
 	if (vec.size() < 2)
         throw std::out_of_range("SpanException : element need more than 2");
-	return std::abs(*std::max_element(vec.begin(), vec.end()) - *std::min_element(vec.begin(), vec.end()));
+	return std::abs((long long)*std::max_element(vec.begin(), vec.end()) - *std::min_element(vec.begin(), vec.end()));
 }
 
 void Span::print_element()

@@ -7,8 +7,8 @@ int main()
 	sp.addNumber(5);
 	sp.addNumber(3);
 	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(11);
+	sp.addNumber(-2147483648);
+	sp.addNumber(2147483647);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
 	try
@@ -29,8 +29,8 @@ int main()
     test.addNumber(vec.begin(), vec.end());
 
     test.print_element();
-
     std::cout << test.shortestSpan() << std::endl;
     std::cout << test.longestSpan() << std::endl;
+
 	return 0;
 }
