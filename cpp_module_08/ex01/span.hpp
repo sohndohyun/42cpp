@@ -18,7 +18,7 @@ public:
 
 	void addNumber(int value);
 	void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
-	unsigned int shortestSpan();
+	unsigned long long int shortestSpan();
 	unsigned long long int longestSpan();
 
 	void print_element();
