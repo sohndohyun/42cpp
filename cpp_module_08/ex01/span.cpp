@@ -51,15 +51,15 @@ void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterato
     }
 }
 
-unsigned int Span::shortestSpan()
+unsigned long long int Span::shortestSpan()
 {
 	if (vec.size() < 2)
         throw std::out_of_range("SpanException : element need more than 2");
 	std::vector<int> temp(vec);
 	std::sort(temp.begin(), temp.end());
-	int ret = INT_MAX;
+	long long int ret = (long long)INT_MAX - INT_MIN;
 	for (unsigned int i = 1;i < temp.size();i++)
-		ret = std::min(ret, std::abs(temp[i] - temp[i - 1]));
+		ret = std::min((long long)ret, std::abs((long long)temp[i] - temp[i - 1]));
 	return ret;
 }
 
